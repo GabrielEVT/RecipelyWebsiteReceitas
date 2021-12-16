@@ -1,0 +1,263 @@
+.cabecalho {
+    position: fixed;
+    width: 100vw;
+    max-width: 100%;
+    transition: 0.3s ease-in;
+    .container-logo {
+        flex-grow: 1;
+    }
+    .logo {
+        width: 120px;
+        display: block;
+        transition: 0.3s ease-in;
+    }
+    &__cadastro-button {
+        display: block;
+        background-color: none;
+        color: #fff;
+        border: 1px solid #ffffff;
+        border-radius: 40px;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        padding: 15px 25px;
+        text-align: center;
+    }
+}
+.cabecalho.scroll-menu-nav {
+    background-color: rgba(38, 50, 56, 0.281);
+    .logo {
+        width: 100px;
+    }
+}
+.cabecalho .container.scroll-menu-nav {
+   height: 12vh;
+}
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 17vh;
+    transition: 0.3s ease-in;
+}
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+}
+.cabecalho-lista {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    &__item {
+        width: 110px;
+        a {
+            font-family: 'Roboto', sans-serif;
+            display: block;
+            padding: 10px 0;
+            width: 100%;
+            height: 100%;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    height: 45px;
+    padding: 5px;
+    background: none;
+    transition: 0.3s ease-in;
+    #inputPesquisaReceita {
+        color: #1c2326;
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0px;
+        line-height: 40px;
+        width: 0;
+        transition: 0.3s ease-in;
+        font-family: 'Roboto', sans-serif;
+    }
+    .icone-search-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 50%;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+}
+@media (min-width: 560px) {
+    .barra-pesquisa:hover > #inputPesquisaReceita {
+        width: 240px;
+    }
+    .barra-pesquisa:hover {
+        padding-left: 15px;
+        background: #ffffff;
+    }
+    .barra-pesquisa:hover > .icone-search-button {
+        background: #1c2326;
+    }
+}
+.mobile-menu {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.mobile-menu div {
+    height: 2px;
+    margin: 8px 0;
+    background-color: #fff;
+    transition: 0.3s ease-in;
+}
+.mobile-menu .linha1 {
+    width: 45%;
+}
+.mobile-menu .linha2 {
+    width: 100%;
+}
+.mobile-menu .linha3 {
+    width: 60%;
+}
+.mobile-menu.active div {
+    margin: 0;
+}
+.mobile-menu.active .linha1 {
+    width: 100%;
+    transform:  rotate(45deg);
+}
+.mobile-menu.active .linha2 {
+    width: 100%;
+    opacity: 0;
+}
+.mobile-menu.active .linha3 {
+    width: 100%;
+    transform: translateY(-185%) rotate(-45deg);
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 1115px) {
+    .cabecalho {
+        &__cadastro-button {
+            width: 80%;
+            margin-top: 10px;
+            padding: 17px 0;
+        }
+    }
+    .mobile-menu {
+        display: block;
+        z-index: 1;
+    }
+    .cabecalho-lista {
+        flex-direction: column;
+        position: absolute;
+        width: 70vw;
+        height: 100vh;
+        top: 0vh;
+        right: 0;   
+        background: #263238;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-top: 10vh;
+        &__item {
+            width: 100%;
+            opacity: 0;
+            a {
+                padding: 20px 0;
+            }
+        }
+    }
+    .cabecalho-lista.active {
+        transform: translateX(0);
+    }
+}
+@media (max-width: 560px) {
+    .cabecalho {
+        padding: 10px 0;
+    }
+    .cabecalho.scroll-menu-nav {
+        background-color: rgba(38, 50, 56, 0.281);
+        .logo {
+            width: 100px;
+        }
+    }
+    .cabecalho .container.scroll-menu-nav {
+        padding: 26px 0;
+        height: 6vh;
+
+        .barra-pesquisa {
+            height: 0;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            overflow: hidden;
+            border: none;
+            #inputPesquisa {
+                line-height: 0;
+            }
+        }
+    }
+    .cabecalho .container {
+        flex-wrap: wrap;
+        align-content: center;
+        height: 25vh;
+    }
+    .barra-pesquisa {
+        margin-top: 25px;
+        justify-content: space-between;
+        border-radius: 40px;
+        height: 5.0rem;
+        border: 1px solid #ffffff;
+        width: 100%;
+        padding-left: 1.5rem;
+        order: 1;
+        transition: 0.2s ease-in;
+        #inputPesquisaReceita {
+            color: #1c2326;
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0px;
+            line-height: 4.0rem;
+            transition: .3s ease;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: #939393;
+        }
+        .icone-search-button {
+            width: 45px;
+            height: 40px;
+            font-size: 20px;
+            color: #ffffff;
+            border-radius: 50%;
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+        }
+    }
+    .barra-pesquisa:hover {
+        background: #ffffff;
+    }
+    .barra-pesquisa:hover > .icone-search-button {
+        background: #1c2326;
+    }
+}
+

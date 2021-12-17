@@ -1,4 +1,4 @@
-class MobileMenuNavBar {
+class MenuNavigation {
     constructor(mobileMenu, cabecalhoLista, cabecalhoListaItem) {
         this.mobileMenu = document.querySelector(mobileMenu);
         this.cabecalhoLista = document.querySelector(cabecalhoLista);
@@ -39,19 +39,18 @@ class MobileMenuNavBar {
     }
 }
 
-const mobileMenuNavBar = new MobileMenuNavBar(
+const menuNavigation = new MenuNavigation(
     '.mobile-menu',
     '.cabecalho-lista',
     '.cabecalho-lista__item'
 );
 
-mobileMenuNavBar.init();
+menuNavigation.init();
 
 const cabecalho = document.querySelector('.cabecalho');
 const cabecalhoContainer = document.querySelector('.cabecalho .container');
 document.addEventListener("scroll", () => {
     let distTop = window.pageYOffset;
-    console.log(distTop);
     if(distTop >= 100){
         cabecalhoContainer.classList.add('scroll-menu-nav');
         cabecalho.classList.add('scroll-menu-nav');

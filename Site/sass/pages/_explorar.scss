@@ -1,0 +1,68 @@
+.explorar__header{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & h1{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 4.8rem;
+        line-height: 63px;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;       
+        text-shadow: 0px 11px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    & .barra-pesquisa__explorar {
+        height: 55px;
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 40px;
+        padding: 10px 5px 10px 10px;
+        background: none;
+        border: 1px solid #848484;
+        transition: 0.3s ease-in;
+        
+        & input#inputPesquisaReceita {
+            width: 100%;
+            color: #fff;
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0px;
+            line-height: 40px;
+            transition: 0.3s ease-in;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        & .icone-search-button {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            color: #848484;
+            border-radius: 50%;
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+        }
+    }
+
+    & .botao{
+        width: 20%;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;   
+    }
+    .icone-envie-receita{
+        margin-left: 10px;
+        font-size: 20px;
+    }
+}

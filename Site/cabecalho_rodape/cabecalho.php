@@ -31,17 +31,16 @@
                     <div class="linha3"></div>
                 </div>
                 <ul class="cabecalho-lista">
-                    <li class="cabecalho-lista__item"><a href="home.php">Home</a></li>
+                    <li class="cabecalho-lista__item"><a href="index.php">Home</a></li>
                     <li class="cabecalho-lista__item"><a href="explorar.php">Explorar</a></li>
                     <li class="cabecalho-lista__item"><a href="contato.php">Contato</a></li>
                     <li class="cabecalho-lista__item"><a href="sobre.php">Sobre</a></li>
                     <li class="cabecalho-lista__item"><a href="login.php">Login</a></li>
                     <a href="cadastro.php" class="cabecalho__cadastro-button">Cadastrar-se</a>
                 </ul>
+                
             </nav>
         </div>
     </header>
-    <script src="js/script.js"></script>
-</body>
-</html>
+
 

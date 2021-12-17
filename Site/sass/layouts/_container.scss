@@ -1,5 +1,14 @@
 .container {
-    width: 85%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+}
+.conteudo-principal {
+    margin-top: 15vh;
+}
+
+@media (max-width: 560px) {
+    .conteudo-principal {
+        margin-top: 27vh;
+    }
 }

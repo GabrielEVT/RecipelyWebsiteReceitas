@@ -1,8 +1,14 @@
+@import 'abstracts/_cores';
+
 @import 'base/_base';
 @import 'base/_normalize';
 
 @import 'layouts/_cabecalho';
+@import 'layouts/_rodape';
 @import 'layouts/_container';
 
+@import 'pages/_pagina-inicial';
+@import 'pages/_explorar';
 
-
+@import 'components/_card-receita';
+@import 'components/botao-neon';

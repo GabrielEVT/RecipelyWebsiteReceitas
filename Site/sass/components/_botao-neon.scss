@@ -1,0 +1,57 @@
+.botao {
+    width: 150px;
+    display: block;
+    background: none;
+    border: 2px solid $cor_vermelha;
+    border-radius: 50px;
+    color: $cor_vermelha;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 550;
+    font-family:"Montserrat";
+    text-shadow: 0 0 0.5em currentColor;
+    padding: 15px 5px;
+    box-shadow: 0 0 1em 0 $cor_vermelha;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 1200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover{
+        background: $cor_vermelha;
+        color: #fff;
+        text-shadow: 0;
+    }
+}
+.botao::before {
+    content: "";
+    position: absolute;
+    background: $cor_vermelha;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(5deg) scale(1, 0.35);
+    filter: blur(2.5em);
+    opacity: 0.5;
+    pointer-events: none;
+    transition: 0.2s ease-in;       
+}
+.botao:hover::before {
+    opacity: 0.3;
+}
+.botao::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 3em 0.5em $cor_vermelha;
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 1200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.botao:hover::after {
+    opacity: 1;
+}

@@ -8,7 +8,7 @@
                 <i class="fas fa-search"></i>
             </a>
         </form>
-        <a class="botao" href="cadastro-receitas.php">Envie sua receita<i class="fas fa-utensils icone-envie-receita"></i></a>
+        <a class="botao" href="receita_cadastro.php">Envie sua receita<i class="fas fa-utensils icone-envie-receita"></i></a>
     </div>
 
     <section class="card-receitas">
@@ -24,8 +24,8 @@
                         </svg>
                     </div>
                     <div class="card__conteudo">
-                        <h1 class="card__conteudo__titulo">Nome da receita</h1>
-                        <p class="card__conteudo__descricao">Sit convallis sollicitudin pellentesque massa a nascetur pellentesque. Morbi gravida molestie sed dolor. In turpis.</p>
+                        <h1 class="card__conteudo__titulo">Bolo de Chocolate</h1>
+                        <p class="card__conteudo__descricao">O bolo de chocolate é uma receita fácil de fazer, vem!! Ingredientes: farinha de trigo, leite, ovos e chocolat.</p>
                         <div class="card__conteudo__bottom">
                             <div class="card__conteudo__bottom__serve">
                                 <p>Serve</p>
@@ -72,7 +72,7 @@
                         </svg>
                     </div>
                     <div class="card__conteudo">
-                        <h1 class="card__conteudo__titulo">Nome da receita</h1>
+                        <h1 class="card__conteudo__titulo">Torta de Frango</h1>
                         <p class="card__conteudo__descricao">Sit convallis sollicitudin pellentesque massa a nascetur pellentesque. Morbi gravida molestie sed dolor. In turpis.</p>
                         <div class="card__conteudo__bottom">
                             <div class="card__conteudo__bottom__serve">

@@ -1,0 +1,162 @@
+.formulario.formulario-receita_cadastro {
+    svg {
+        width: 1em;
+        height: 1em;
+    }
+    font-size: 1.6rem;
+    width: 70%;
+    margin: 0 auto;
+    
+    .formulario__campo__ingredientes {
+        margin: 0;
+        display: flex;
+        input {
+            margin-top: 10px;
+        }
+        & svg {
+            margin-top: 10px;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        & svg:hover {
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+        & button {
+            background: none;
+            outline: none;
+            border: none;
+        }
+    }
+    
+    & .formulario__campo-label{
+        color: $cor_principal;
+        width: 100%;
+        font-size: 2.0rem;
+    }
+
+    & .border{
+        width: 100%;
+        height: auto;
+        border: 1px solid #848484;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-around;
+        padding: 40px;
+    }
+
+    & .descricao_receita {
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 5px;
+        }
+    }
+
+    & #imagem_camera_foto{
+        width: 2.5em;
+        height: 3.1em;
+        padding: 10px 0px;
+        margin-bottom: 10px;
+    }
+
+    & #imagem_camera_video{
+        width: 2.5em;
+        height: 3.1em;
+        padding: 10px 0px;
+        margin-bottom: 10px;
+        
+    }
+    
+    & .container-imagens-videos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 60px;
+
+        & .container-imagem-receita {
+            height: 45px;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: $cor_principal;
+            color: #fff;
+            border-radius: 25px;
+            font-weight: 50;
+            cursor: pointer;
+            input {
+                display: none;
+            }
+        }
+    }
+
+    & .arraste {
+        color: $cor_principal;
+        font-weight:100;
+        span {
+            display: block;
+            margin-top: 6px; 
+            color: #848484;
+            font-weight:100;
+            
+        }
+    }
+
+    
+
+
+    & .informacoes_adicionais{
+
+        &__inputs{
+            // display: flex;
+            // justify-content: space-around;
+            // align-items: flex-end;
+            & input{
+                display: inline-flex;
+                width: 100px;
+                height: 35px;
+                padding: 10px 20px;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1115px) {
+    .formulario.formulario-receita_cadastro {
+        width: 100%;
+        margin: 0 auto;
+
+        & .informacoes_adicionais{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            &__inputs{
+                
+                & input{
+                    display: inline;
+                    width: 100px;
+                    height: 35px;
+                    padding: 10px 20px;
+                    margin-top: 0px;
+                    margin-right: 10px;
+                }
+            }
+            #serve {
+                svg {
+                    margin-top: 10px;
+                }
+                span {
+                    
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

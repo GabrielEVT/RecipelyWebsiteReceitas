@@ -1,0 +1,162 @@
+.formulario.formulario-login {
+    .formulario {
+        background: none;
+        color: #848484;
+        font-family: 'Comfortaa';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        &__conteudo {
+            border-radius: 35px;
+            padding: 50px 70px;
+            flex: 1 1 500px;
+        }
+        &__titulo {
+            text-align: center;
+            padding: 0 20px;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: $cor_principal;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &__campo {
+            margin-bottom: 30px;
+            
+        }
+        &__campo-label {
+            color: #ddd;
+            & span{
+                color: $cor_principal;
+                font-weight: 300;
+            }
+        }
+        &__campo-input {
+            display: block;
+            width: 100%;
+            outline: none;
+            background: none;
+            border: 1px solid #848484;
+            padding: 15px;
+            border-radius: 25px;
+            color: #fff;
+            margin-top: 10px;
+        }
+        &__campo-text-area {
+            background: none;
+            width: 100%;
+            height: 300px;
+            display: block;
+            padding: 20px;
+            outline: none;
+            margin-top: 10px;
+            border-radius: 25px;
+            resize: none;
+            color: #fff;
+            line-height: 22px;
+        }
+        &__button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 40px;
+            outline: none;
+            background: none;
+            color: $cor_principal;
+            border: 1px solid $cor_principal;
+            border-radius: 20px;
+            padding: 15px 60px;
+            cursor: pointer;
+            position: relative;
+            transition: 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+        &__button:hover {
+            color: #fff;
+            background-color: $cor_principal;
+            transform: scale(1.05);
+        }
+        &__imagem-container {
+            flex: 1 1 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            order: -1;
+        }
+        &__imagem {
+            width: 400px;
+            display: block;
+        }
+        &__checkbox-radio-container {
+            display: block;
+            display: flex;
+            line-height: 25px;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            & input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: #eee;
+                border-radius: 5px;
+            }
+            &:hover input ~ .checkmark {
+                background-color: #d95757;
+            }
+            & input:checked ~ .checkmark {
+                background-color: $cor_principal;
+            }
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            & input:checked ~ .checkmark:after {
+                display: block;
+            }
+            & .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid rgb(255, 255, 255);
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+@media (max-width: 1115px) {
+    .formulario.formulario-login {
+        .formulario {
+            &__conteudo {
+                padding: 20px;
+            }
+            &__imagem-container {
+                margin-bottom: 20px;
+                order: -1;
+            }
+            &__imagem {
+                width: 300px;
+                transform: translateX(00px);
+            }
+        }
+    }
+}

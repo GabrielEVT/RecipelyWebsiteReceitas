@@ -20,11 +20,12 @@ footer{
 
                     margin: 40px 0px;
                     position: relative;
+                    transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                     
                     & a{
                         color: #7a7a7a;
                         text-decoration: none;
-                        font-weight: 100;
+                        font-weight: 400;
                         font-size: 1.4rem;
                         display: flex;
                         align-items: center;
@@ -40,6 +41,9 @@ footer{
                         margin-right: 10px;
                         
                     }
+                }
+                & li:hover {
+                    transform: scale(1.05);
                 }
             }
         
@@ -60,7 +64,7 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 20px;
+        margin-top: 10px;
         flex-wrap: wrap;
         & .logo{
             padding: 10px 0;
@@ -70,6 +74,7 @@ footer{
         }
 
         &__links{
+            margin-top: 10px;
             flex-basis: 300px;
             display: flex;
             justify-content: space-between;
@@ -81,9 +86,9 @@ footer{
                 transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 display: block;
                 padding: 10px 0px;
-
                 &:hover{
                     color: white;
+                    transform: scale(1.05);
                 }
             }
         }

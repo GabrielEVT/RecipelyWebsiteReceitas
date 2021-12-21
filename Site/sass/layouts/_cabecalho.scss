@@ -23,10 +23,16 @@
         text-decoration: none;
         padding: 15px 25px;
         text-align: center;
+        position: relative;
+        transition: 0.2s ease-in;
+    }
+    &__cadastro-button:hover {
+        background: #fff;
+        color: #000;
     }
 }
 .cabecalho.scroll-menu-nav {
-    background-color: rgba(38, 50, 56, 0.5);
+    background-color: rgba(38, 50, 56, 0.8);
     .logo {
         width: 100px;
     }
@@ -49,19 +55,39 @@
     display: flex;
     align-items: center;
     list-style-type: none;
+    position: relative;
     &__item {
         width: 110px;
+        display: block;
         a {
             font-family: 'Roboto', sans-serif;
-            display: block;
             padding: 10px 0;
+            display: block;
             width: 100%;
             height: 100%;
             color: #ffffff;
             text-decoration: none;
             text-align: center;
+            position: relative;
+            // border: 2px solid red;
         }
     }
+}
+.cabecalho-lista .marcador {
+    position: absolute;
+    height: 1.5px;
+    left: 0;
+    width: 0;
+    background: $cor_principal;
+    // background: yellow;
+    transition: 0.3s ease-in;
+    bottom: 5px;
+    transform: scaleX(0.5);
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+}
+.cabecalho-lista__item:hover ~ .marcador {
+    opacity: 1;
 }
 .barra-pesquisa {
     display: flex;
@@ -156,6 +182,9 @@
     }
 }
 @media (max-width: 1115px) {
+    .cabecalho-lista .marcador {
+        display: none;
+    }
     .cabecalho {
         &__cadastro-button {
             width: 80%;
@@ -194,7 +223,7 @@
 }
 @media (max-width: 560px) {
     .cabecalho {
-        padding: 10px 0;
+        padding: 0;
     }
     .cabecalho.scroll-menu-nav {
         background-color: rgba(38, 50, 56, 0.281);
@@ -204,7 +233,7 @@
     }
     .cabecalho .container.scroll-menu-nav {
         padding: 26px 0;
-        height: 6vh;
+        height: 70px;
 
         .barra-pesquisa {
             height: 0;
@@ -221,7 +250,7 @@
     .cabecalho .container {
         flex-wrap: wrap;
         align-content: center;
-        height: 25vh;
+        height: 175px;
     }
     .barra-pesquisa {
         margin-top: 25px;

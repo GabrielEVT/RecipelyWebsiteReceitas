@@ -7,7 +7,7 @@
                     Faça você<br class="quebra-desktop"> do jeito<br class="quebra-desktop"> Recipely
                 </h1>
                 <h2 class="banner__subtitulo">
-                    Descubra novas receitas<br class="quebra-desktop"> para se deliciar.
+                    Descubra novas receitas<br> para se deliciar.
                 </h2>
                 <a class="botao" href="explorar.php">Explorar</a>
             </div>

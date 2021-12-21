@@ -7,8 +7,9 @@
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link type="text/css"rel="stylesheet" href="css/style.css">
     <title>Recipely - Blog de Receitas</title>
 </head>
@@ -36,9 +37,9 @@
                     <li class="cabecalho-lista__item"><a href="contato.php">Contato</a></li>
                     <li class="cabecalho-lista__item"><a href="sobre.php">Sobre</a></li>
                     <li class="cabecalho-lista__item"><a href="login.php">Login</a></li>
-                    <a href="cadastro.php" class="cabecalho__cadastro-button">Cadastrar-se</a>
+                    <div class="marcador"></div>
+                    <a href="signup.php" class="cabecalho__cadastro-button">Cadastrar-se</a>
                 </ul>
-                
             </nav>
         </div>
     </header>

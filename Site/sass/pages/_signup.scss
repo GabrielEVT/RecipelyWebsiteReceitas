@@ -1,0 +1,28 @@
+.formulario.formulario-signup {
+    &__imagem-container {
+        flex: 1 1 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__imagem {
+        width: 500px;
+        display: block;
+    }
+}
+
+@media (max-width: 1115px) {
+    .formulario.formulario-signup  {
+        &__conteudo {
+            padding: 20px;
+        }
+        &__imagem-container {
+            margin-bottom: 20px;
+            order: -1;
+        }
+        &__imagem {
+            width: 300px;
+            transform: translateX(0px);
+        }
+    }
+}

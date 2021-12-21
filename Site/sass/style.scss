@@ -6,9 +6,13 @@
 @import 'layouts/_cabecalho';
 @import 'layouts/_rodape';
 @import 'layouts/_container';
+@import 'layouts/_formulario';
 
 @import 'pages/_pagina-inicial';
 @import 'pages/_explorar';
+@import 'pages/_signup';
+@import 'pages/_login';
+@import 'pages/_receita_cadastro';
 
 @import 'components/_card-receita';
 @import 'components/botao-neon';

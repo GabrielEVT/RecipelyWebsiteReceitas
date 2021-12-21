@@ -47,11 +47,24 @@ const menuNavigation = new MenuNavigation(
 
 menuNavigation.init();
 
+const marcador = document.querySelector('.marcador');
+const menuItem = document.querySelectorAll('.cabecalho-lista__item a');
+function itemAtual(e) {
+    marcador.style.left = e.offsetLeft+"px";
+    marcador.style.width = e.offsetWidth+"px";
+}
+menuItem.forEach(link => {
+    link.addEventListener('mouseover', (e) => {
+        itemAtual(e.target);
+        
+    });
+});
+
 const cabecalho = document.querySelector('.cabecalho');
 const cabecalhoContainer = document.querySelector('.cabecalho .container');
 document.addEventListener("scroll", () => {
     let distTop = window.pageYOffset;
-    if(distTop >= 100){
+    if(distTop >= 1){
         cabecalhoContainer.classList.add('scroll-menu-nav');
         cabecalho.classList.add('scroll-menu-nav');
     } else {

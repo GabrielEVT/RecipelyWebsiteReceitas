@@ -1,5 +1,5 @@
 INSERT INTO
-    tb_usuario
+    `tb_usuario`
 VALUES
     (
         default,

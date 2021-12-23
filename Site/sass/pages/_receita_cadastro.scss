@@ -41,10 +41,6 @@
             right: 0;   
             transition: 0.2s ease-in-out;         
         }
-
-        & button:hover {
-            transform: rotate(360deg);
-        }
     }
 
     & .border{
@@ -89,13 +85,11 @@
         padding: 20px 60px;
 
         & .container-imagem-receita {
-            height: 45px;
-            margin-top: 25px;
             padding: 15px 35px;
+            margin-top: 15px;
             background: $cor_principal;
-            color: #fff;
             border-radius: 25px;
-            font-weight: 50;
+            color: #fff;
             cursor: pointer;
             input {
                 display: none;
@@ -114,9 +108,6 @@
             
         }
     }
-
-    
-
 
     & .informacoes_adicionais{
 

@@ -171,54 +171,63 @@
                     </div>
                 </div>
 
-                <div class="formulario__campo border container-imagens-videos">
-                    <label class="formulario__campo-label">
-                        <svg id="imagem_camera_foto"
-                            xmlns="http://www.w3.org/2000/svg" 
-                            xmlns:xlink="http://www.w3.org/1999/xlink" 
-                            aria-hidden="true" 
-                            focusable="false" 
-                            width="2.0em" 
-                        height="2.0em" 
-                            style="vertical-align: -0.125em;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" 
-                            preserveAspectRatio="xMidYMid meet" 
-                            viewBox="0 0 16 16">
-                                <g 
-                                fill="#db3535">
-                                    <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0z"/>
-                                    <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1a.5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0a3.5 3.5 0 0 1 7 0z"/>
-                                </g>
-                        </svg>
-                        <p class="arraste">ARRASTE PARA ENVIAR FOTOS DA RECEITA<span>Adicione até 5 imagens</span></p>
-                    </label>
-                    <label for="imagem_receita" class="container-imagem-receita">Adicionar imagem
-                        <input type="file" name="imagem_receita" id="imagem_receita">
-                    </label>
+                <div class="formulario__campo">
+                    <div class="container-imagens-videos border">
+                        <label class="formulario__campo-label">
+                            <svg id="imagem_camera_foto"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                aria-hidden="true" 
+                                focusable="false" 
+                                width="2.0em" 
+                            height="2.0em" 
+                                style="vertical-align: -0.125em;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" 
+                                preserveAspectRatio="xMidYMid meet" 
+                                viewBox="0 0 16 16">
+                                    <g 
+                                    fill="#db3535">
+                                        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0z"/>
+                                        <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1a.5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0a3.5 3.5 0 0 1 7 0z"/>
+                                    </g>
+                            </svg>
+                            <p class="arraste">ARRASTE PARA ENVIAR FOTOS DA RECEITA<span>Adicione até 5 imagens</span></p>
+                        </label>
+                        <label for="imagem_receita" class="container-imagem-receita">Adicionar imagem
+                            <input type="file" name="imagem_receita" id="imagem_receita" accept="image/*"  multiple>
+                        </label>
+                    </div>
+                    <div class="images_container__preview">
+
+                    </div>
                 </div>
 
-                <div class="formulario__campo border container-imagens-videos">
-                    <label class="formulario__campo-label">
-                        <svg id="imagem_camera_video"
-                            xmlns="http://www.w3.org/2000/svg" 
-                            xmlns:xlink="http://www.w3.org/1999/xlink" 
-                            aria-hidden="true" 
-                            role="img" 
-                            width="2.0em" 
-                            height="2.0em" 
-                            preserveAspectRatio="xMidYMid meet" 
-                            viewBox="0 0 16 16">
-                                <g 
-                                    fill="#db3535">
-                                    <path 
-                                        fill-rule="evenodd" 
-                                        d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
-                                </g>
-                        </svg>
-                        <p class="arraste">ARRASTE PARA ENVIAR VÍDEO DA RECEITA<span>Adicione um vídeo de até 300mb</span></p>
-                    </label>
-                    <label for="video_receita" class="container-imagem-receita">Adicionar vídeo
-                        <input type="file" name="video_receita" id="video_receita">
-                    </label>     
+                <div class="formulario__campo">
+                    <div class="container-imagens-videos border">
+                        <label class="formulario__campo-label">
+                            <svg id="imagem_camera_video"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                aria-hidden="true" 
+                                role="img" 
+                                width="2.0em" 
+                                height="2.0em" 
+                                preserveAspectRatio="xMidYMid meet" 
+                                viewBox="0 0 16 16">
+                                    <g 
+                                        fill="#db3535">
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+                                    </g>
+                            </svg>
+                            <p class="arraste">ARRASTE PARA ENVIAR VÍDEO DA RECEITA<span>Adicione um vídeo de até 300mb</span></p>
+                        </label>
+                        <label for="video_receita" class="container-imagem-receita">Adicionar vídeo
+                            <input type="file" name="video_receita" id="video_receita" accept="video/*">
+                        </label>     
+                    </div>
+
+                    <video id="video-preview" style="display: block" height="300px" width="200px" controls>
                 </div>
                 <button class="formulario__button" type="submit">Envie sua receita</button>
             </fieldset>
@@ -226,13 +235,67 @@
     </div>   
 </main>
 
+<!-- IMAGE UPLOAD PREVIEW -->
+<script>
+    const input_image = document.getElementById('imagem_receita');
+    const imagem_container = document.querySelector('.images_container__preview');
+
+    function images_preview(){
+        for(i of input_image.files){
+            let reader = new FileReader();
+            let figure = document.createElement("figure")
+            let figCap = document.createElement("figcaption")
+
+            figCap.innerText = i.name;
+            figure.appendChild(figcap);
+            reader.onload=()=>{
+                let img = document.createElement("img")
+                img.setAttribute("src", reader.result)
+                figure.insertBefore(img, figCap)
+            }
+            imagem_container.appendChild(figure)
+            reader.readAsDataURL(i)
+        }
+    }
+</script>
+
+<!-- VIDEO UPLOAD PREVIEW -->
+<script>
+    const input_video = document.getElementById('video_receita');
+    const video = document.getElementById('video-preview');
+    const videoSource = document.createElement('source');
+
+    input_video.addEventListener('change', function() {
+    const files = this.files || [];
+
+    if (!files.length) return;
+    
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        videoSource.setAttribute('src', e.target.result);
+        video.appendChild(videoSource);
+        video.load();
+        video.play();
+    };
+    
+    reader.onprogress = function (e) {
+        console.log('progress: ', Math.round((e.loaded * 100) / e.total));
+    };
+    
+    reader.readAsDataURL(files[0]);
+    });
+</script>
+
+
+<!-- ADICIONAR NOVO INPUT RECEITA -->
 <script>
     const btnAdicionarIngrediente = document.querySelector('.btn-adicionar-ingrediente');
     const divIngrediente = document.querySelector('#formulario__campo-novo-ingrediente');
     let i = 1;
     btnAdicionarIngrediente.addEventListener('click', () => {
         i++;
-        if(i > 5) {
+        if(i > 20) {
             btnAdicionarIngrediente.disabled = true;
             btnAdicionarIngrediente.style.transition = "0.3s ease";
             btnAdicionarIngrediente.style.opacity = "0.5";
@@ -248,6 +311,7 @@
             adicionarIngrediente();
         }
     });
+
     function adicionarIngrediente() {
         const divElemento = document.createElement('div');
         divElemento.setAttribute('class', 'formulario__campo__ingredientes');
@@ -260,40 +324,5 @@
         divElemento.appendChild(inputElemento);
         divIngrediente.appendChild(divElemento);
     }
-
-    // <div class="formulario__campo__ingredientes">
-    //     <input type="text" name="nome_ingrediente" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
-    // </div>    
-
-
-
-
-    
-    // ADICIONAR NOVO INPUT DOS INGREDIENTES
-    // var add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
-
-    // function adicionar_input(){
-    //     alert("OI")
-    //     for (let i = 0; i < add_ingredientes.length; i++) 
-    //     {
-    //         add_ingredientes[i].addEventListener(`click`, ()=>{
-        
-    //             var div_ingredientes = document.getElementsByClassName(`.formulario__campo__ingredientes`)
-        
-    //             clone_div = div_ingredientes[i].cloneNode(true)
-                
-    //             add = div_ingredientes[i].insertAdjacentElement(`afterend`, clone_div)
-        
-    //             if (add != null)
-    //             {
-    //                 add_ingredientes[i].disabled = true; 
-    //                 add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
-                    
-    //                 adicionar_input()
-    //             }
-    //         })
-    //     }
-    // }
-        
 </script>
 <?php include 'cabecalho_rodape/rodape.php'; ?>

@@ -1,14 +1,14 @@
 <?php include_once 'cabecalho_rodape/cabecalho.php'; ?>
 <main class="conteudo-principal">
-    <div class="explorar__header">
-        <h1>Receitas</h1>
-        <form class="barra-pesquisa__explorar">
+    <div class="explorar__header container">
+        <h1 class="explorar__header__flex-item">Receitas</h1>
+        <form class="barra-pesquisa__explorar explorar__header__flex-item">
             <input type="search" name="buscarReceita" placeholder="Busque por receitas ou usuários" id="inputPesquisaReceita">
             <a class="icone-search-button" href="#">
                 <i class="fas fa-search"></i>
             </a>
         </form>
-        <a class="botao" href="receita_cadastro.php">Envie sua receita<i class="fas fa-utensils icone-envie-receita"></i></a>
+        <a class="botao explorar__header__flex-item" href="receita_cadastro.php">Envie sua receita<i class="fas fa-utensils icone-envie-receita"></i></a>
     </div>
 
     <section class="card-receitas">

@@ -1,7 +1,7 @@
 <?php include 'cabecalho_rodape/cabecalho.php'; ?>
 <main class="conteudo-principal pagina-receita_cadastro">
     <div class="container">
-        <form action="" class="formulario formulario-receita_cadastro">
+        <form action="" class="formulario formulario-receita_cadastro" enctype="multipart/form-data">
             <fieldset class="formulario__conteudo">
                 <legend class="formulario__titulo">
                     Envie sua receita

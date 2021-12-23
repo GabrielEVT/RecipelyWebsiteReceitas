@@ -237,26 +237,22 @@
 
 <!-- IMAGE UPLOAD PREVIEW -->
 <script>
-    const input_image = document.getElementById('imagem_receita');
+    const input_images = document.getElementById('imagem_receita');
     const imagem_container = document.querySelector('.images_container__preview');
 
-    function images_preview(){
-        for(i of input_image.files){
+    input_images.addEventListener('change', () =>{
+        for(i of input_images.files){
             let reader = new FileReader();
             let figure = document.createElement("figure")
-            let figCap = document.createElement("figcaption")
-
-            figCap.innerText = i.name;
-            figure.appendChild(figcap);
             reader.onload=()=>{
                 let img = document.createElement("img")
                 img.setAttribute("src", reader.result)
-                figure.insertBefore(img, figCap)
+                figure.insertBefore(img)
             }
             imagem_container.appendChild(figure)
             reader.readAsDataURL(i)
         }
-    }
+    })
 </script>
 
 <!-- VIDEO UPLOAD PREVIEW -->
@@ -265,12 +261,12 @@
     const video = document.getElementById('video-preview');
     const videoSource = document.createElement('source');
 
-    input_video.addEventListener('change', function() {
-    const files = this.files || [];
+    input_video.addEventListener('change', () => {
+    let files = this.files || [];
 
     if (!files.length) return;
     
-    const reader = new FileReader();
+    let reader = new FileReader();
 
     reader.onload = function (e) {
         videoSource.setAttribute('src', e.target.result);

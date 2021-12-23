@@ -5,37 +5,46 @@
     }
     font-size: 1.6rem;
     width: 70%;
-    margin: 0 auto;
-    
+    margin: 0 auto;    
     .formulario__campo__ingredientes {
         margin: 0;
         display: flex;
         input {
             margin-top: 10px;
-        }
-        & svg {
-            margin-top: 10px;
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
-            transition: 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        & svg:hover {
-            border: 2px solid rgb(255, 255, 255);
-            border-radius: 5px;
-        }
-        & button {
-            background: none;
-            outline: none;
-            border: none;
-        }
+        }       
     }
     
     & .formulario__campo-label{
         color: $cor_principal;
         width: 100%;
         font-size: 2.0rem;
+    }
+
+    & #formulario__campo-label-adicionar-ingrediente {
+        display: block;        
+        padding: 0;
+        margin: 0;
+        position: relative;
+        & svg#adicionar-ingrediente {
+            width: 27px;
+            height: 27px;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0;
+        }
+        & button {
+            background: none;
+            outline: none;
+            border: none;
+            position: absolute;
+            right: 0;   
+            transition: 0.2s ease-in-out;         
+        }
+
+        & button:hover {
+            transform: rotate(360deg);
+        }
     }
 
     & .border{

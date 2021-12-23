@@ -31,8 +31,8 @@
                     <input type="text" class="formulario__campo-input" name="nome_receita" placeholder="Ex. Bolo de chocolate">
                 </div>
 
-                <div class="formulario__campo">
-                    <label class="formulario__campo-label" for="nome_ingrediente">
+                <div class="formulario__campo" id="formulario__campo-novo-ingrediente">
+                    <label id="formulario__campo-label-adicionar-ingrediente" class="formulario__campo-label" for="nome_ingrediente">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -53,15 +53,10 @@
                             </g>
                         </svg>
                         Ingredientes
-                    </label>
-
-                    <div class="formulario__campo__ingredientes">
-                        <input type="text" name="nome_ingrediente" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
-                        <button 
+                        <button
                             type="button"
-                            class="btn_add_ingredientes" id="btn_ingredientes"
-                            onclick="adicionar_input()">
-                            <svg 
+                            class="btn-adicionar-ingrediente" id="btn-adicionar-ingrediente">
+                            <svg id="adicionar-ingrediente"
                                 xmlns="http://www.w3.org/2000/svg" 
                                 xmlns:xlink="http://www.w3.org/1999/xlink" 
                                 aria-hidden="true" 
@@ -80,7 +75,10 @@
                                     </g>
                             </svg>
                         </button>
-                    </div>                   
+                    </label>
+                    <div class="formulario__campo__ingredientes">
+                        <input type="text" name="nome_ingrediente" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
+                    </div>                  
                 </div>
 
                 <div class="formulario__campo">
@@ -229,30 +227,73 @@
 </main>
 
 <script>
-    // ADICIONAR NOVO INPUT DOS INGREDIENTES
-    var add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
-
-    function adicionar_input(){
-        alert("OI")
-        for (let i = 0; i < add_ingredientes.length; i++) 
-        {
-            add_ingredientes[i].addEventListener(`click`, ()=>{
-        
-                var div_ingredientes = document.getElementsByClassName(`.formulario__campo__ingredientes`)
-        
-                clone_div = div_ingredientes[i].cloneNode(true)
-                
-                add = div_ingredientes[i].insertAdjacentElement(`afterend`, clone_div)
-        
-                if (add != null)
-                {
-                    add_ingredientes[i].disabled = true; 
-                    add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
-                    
-                    adicionar_input()
-                }
-            })
+    const btnAdicionarIngrediente = document.querySelector('.btn-adicionar-ingrediente');
+    const divIngrediente = document.querySelector('#formulario__campo-novo-ingrediente');
+    let i = 1;
+    btnAdicionarIngrediente.addEventListener('click', () => {
+        i++;
+        if(i > 5) {
+            btnAdicionarIngrediente.disabled = true;
+            btnAdicionarIngrediente.style.transition = "0.3s ease";
+            btnAdicionarIngrediente.style.opacity = "0.5";
+            btnAdicionarIngrediente.style.pointerEvents = "none";
+            const paragrafoMensagem = document.createElement('p');
+            paragrafoMensagem.textContent = "Quantidade de ingredientes exedida, por favor, pare!";
+            paragrafoMensagem.style.marginTop = "10px";
+            paragrafoMensagem.style.paddingLeft = "5px";
+            paragrafoMensagem.style.color = "#e51515";
+            paragrafoMensagem.style.borderLeft = "2px solid #e51515"
+            divIngrediente.appendChild(paragrafoMensagem);
+        } else {
+            adicionarIngrediente();
         }
+    });
+    function adicionarIngrediente() {
+        const divElemento = document.createElement('div');
+        divElemento.setAttribute('class', 'formulario__campo__ingredientes');
+
+        const inputElemento = document.createElement('input');
+        inputElemento.setAttribute('class', 'formulario__campo-input');
+        inputElemento.setAttribute('name', `nome_ingrediente_${i}`);
+        inputElemento.setAttribute('placeholder', 'Ex. 2 xícaras de leite');
+
+        divElemento.appendChild(inputElemento);
+        divIngrediente.appendChild(divElemento);
     }
+
+    // <div class="formulario__campo__ingredientes">
+    //     <input type="text" name="nome_ingrediente" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
+    // </div>    
+
+
+
+
+    
+    // ADICIONAR NOVO INPUT DOS INGREDIENTES
+    // var add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
+
+    // function adicionar_input(){
+    //     alert("OI")
+    //     for (let i = 0; i < add_ingredientes.length; i++) 
+    //     {
+    //         add_ingredientes[i].addEventListener(`click`, ()=>{
+        
+    //             var div_ingredientes = document.getElementsByClassName(`.formulario__campo__ingredientes`)
+        
+    //             clone_div = div_ingredientes[i].cloneNode(true)
+                
+    //             add = div_ingredientes[i].insertAdjacentElement(`afterend`, clone_div)
+        
+    //             if (add != null)
+    //             {
+    //                 add_ingredientes[i].disabled = true; 
+    //                 add_ingredientes = document.getElementsByClassName(`btn_add_ingredientes`)
+                    
+    //                 adicionar_input()
+    //             }
+    //         })
+    //     }
+    // }
+        
 </script>
 <?php include 'cabecalho_rodape/rodape.php'; ?>

@@ -245,12 +245,20 @@
             let reader = new FileReader();
             let figure = document.createElement("figure")
             let figCaption = document.createElement("figcaption")
+            let containerImagem = document.createElement("div");
+            containerImagem.setAttribute("class", "imagem-preview-container");
+            let containerConteudo = document.createElement("div");
+            containerConteudo.setAttribute("class", "imagem-preview-item");
             figCaption.innerText = i.name;
-            figure.appendChild(figCaption)
+            figure.appendChild(containerConteudo);
+            containerConteudo.appendChild(figCaption)
+            containerConteudo.appendChild(containerImagem);
             reader.onload=()=>{
                 let img = document.createElement("img")
                 img.setAttribute("src", reader.result)
-                figure.insertBefore(img, figCaption)
+                img.setAttribute("class", 'imagem-preview');    
+                containerImagem.appendChild(img);
+                containerConteudo.insertBefore(containerImagem, figCaption)
             }
             imagem_container.appendChild(figure)
             reader.readAsDataURL(i)

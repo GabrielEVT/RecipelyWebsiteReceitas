@@ -1,0 +1,36 @@
+.icone-favorito {
+    width: 25px;
+    opacity: 1 !important;
+    path {
+        fill: transparent;
+        stroke-width: 1.5px;
+        stroke: #db3535;
+        stroke-dasharray: 60;
+        stroke-dashoffset: 0;
+        transition: 0.5s ease;
+    }
+
+    path.animation-icone-favorito {
+        fill: #db3535;
+        animation: animate-icone-favorito 0.7s linear forwards;
+    }
+}
+@keyframes animate-icone-favorito {
+    0% {
+        stroke: #ebcd18;
+        stroke-dashoffset: 0;
+    }
+
+    40% {
+        stroke-dashoffset: 60;
+    }
+
+    80% {
+        stroke-dashoffset: 120;
+    }
+
+    100% {
+        stroke: #ebcd18;
+        stroke-dashoffset: 120;
+    }
+}

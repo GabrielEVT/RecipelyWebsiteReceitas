@@ -71,5 +71,12 @@ document.addEventListener("scroll", () => {
         cabecalho.classList.remove('scroll-menu-nav');
         cabecalhoContainer.classList.remove('scroll-menu-nav');
     }
-
 });
+
+let iconeFavorito = document.querySelectorAll(".icone-favorito path");
+
+for(i = 0; i < iconeFavorito.length; i++) {
+    iconeFavorito[i].addEventListener("click", function(){
+        this.classList.toggle("animation-icone-favorito");
+    });
+}

@@ -1,7 +1,7 @@
 <?php include 'cabecalho_rodape/cabecalho.php'; ?>
 <main class="conteudo-principal pagina-receita_cadastro">
     <div class="container">
-        <form action="" class="formulario formulario-receita_cadastro" enctype="multipart/form-data">
+        <form action="test.php" method="post" class="formulario formulario-receita_cadastro" enctype="multipart/form-data">
             <fieldset class="formulario__conteudo">
                 <legend class="formulario__titulo">
                     Envie sua receita
@@ -28,7 +28,7 @@
                         </svg>
                         Nome da receita
                     </label>
-                    <input type="text" class="formulario__campo-input" name="nome_receita" placeholder="Ex. Bolo de chocolate">
+                    <input type="text" class="formulario__campo-input" name="input_nomeReceita" placeholder="Ex. Bolo de chocolate">
                 </div>
 
                 <div class="formulario__campo" id="formulario__campo-novo-ingrediente">
@@ -77,7 +77,7 @@
                         </button>
                     </label>
                     <div class="formulario__campo__ingredientes">
-                        <input type="text" name="nome_ingrediente" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
+                        <input type="text" name="inputs_ingredientesReceita[]" class="formulario__campo-input" placeholder="Ex. 2 xícaras de leite" id="nome_ingrediente">
                     </div>                  
                 </div>
 
@@ -97,7 +97,7 @@
                         </svg>
                         Modo de preparo
                     </label>
-                    <textarea name="modo_preparo" class="formulario__campo-text-area"
+                    <textarea name="input_modoPreparoReceita" class="formulario__campo-text-area"
                     placeholder="Ex. Bata todos os ingredientes"></textarea>
                 </div>
 
@@ -117,7 +117,7 @@
                         </svg>
                         Breve descrição
                     </label>
-                    <textarea name="descricao_receita" class="formulario__campo-text-area"
+                    <textarea name="input_descricaoReceita" class="formulario__campo-text-area"
                     placeholder="Ex. Receita de chocolate utilizando ingredientes de fácil acesso"></textarea>
                 </div>
 
@@ -142,7 +142,7 @@
                             <span>Tempo de preparo</span>
                         </label>
                         <div class="informacoes_adicionais__inputs">
-                            <input type="number" class="formulario__campo-input" name="tempo_preparo">
+                            <input type="number" class="formulario__campo-input" name="input_tempoPreparoReceita">
                             <span>minutos</span>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         </label>
 
                         <div class="informacoes_adicionais__inputs">
-                            <input class="formulario__campo-input" type="number" name="serve">
+                            <input class="formulario__campo-input" type="number" name="input_serveReceita">
                             <span>pessoas</span>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
                             <p class="arraste">ARRASTE PARA ENVIAR FOTOS DA RECEITA<span>Adicione até 5 imagens</span></p>
                         </label>
                         <label for="imagem_receita" class="container-imagem-receita">Adicionar imagem
-                            <input type="file" name="imagem_receita" id="imagem_receita" accept="image/*"  multiple>
+                            <input type="file" name="inputFiles_imagensReceita[]" id="imagem_receita" accept="image/*"  multiple>
                         </label>
                     </div>
                     <div class="images_container__preview">
@@ -223,7 +223,7 @@
                             <p class="arraste">ARRASTE PARA ENVIAR VÍDEO DA RECEITA<span>Adicione um vídeo de até 300mb</span></p>
                         </label>
                         <label for="video_receita" class="container-imagem-receita">Adicionar vídeo
-                            <input type="file" name="video_receita" id="video_receita" accept="video/*">
+                            <input type="file" name="inputFile_videoReceita" id="video_receita" accept="video/*">
                         </label>     
                     </div>
 
@@ -244,10 +244,13 @@
         for(i of input_images.files){
             let reader = new FileReader();
             let figure = document.createElement("figure")
+            let figCaption = document.createElement("figcaption")
+            figCaption.innerText = i.name;
+            figure.appendChild(figCaption)
             reader.onload=()=>{
                 let img = document.createElement("img")
                 img.setAttribute("src", reader.result)
-                figure.insertBefore(img)
+                figure.insertBefore(img, figCaption)
             }
             imagem_container.appendChild(figure)
             reader.readAsDataURL(i)
@@ -261,9 +264,9 @@
     const video = document.getElementById('video-preview');
     const videoSource = document.createElement('source');
 
-    input_video.addEventListener('change', () => {
+    input_video.addEventListener('change', function() {
     let files = this.files || [];
-
+    
     if (!files.length) return;
     
     let reader = new FileReader();
@@ -273,10 +276,6 @@
         video.appendChild(videoSource);
         video.load();
         video.play();
-    };
-    
-    reader.onprogress = function (e) {
-        console.log('progress: ', Math.round((e.loaded * 100) / e.total));
     };
     
     reader.readAsDataURL(files[0]);
@@ -314,7 +313,7 @@
 
         const inputElemento = document.createElement('input');
         inputElemento.setAttribute('class', 'formulario__campo-input');
-        inputElemento.setAttribute('name', `nome_ingrediente_${i}`);
+        inputElemento.setAttribute('name', `inputs_ingredientesReceita[]`);
         inputElemento.setAttribute('placeholder', 'Ex. 2 xícaras de leite');
 
         divElemento.appendChild(inputElemento);

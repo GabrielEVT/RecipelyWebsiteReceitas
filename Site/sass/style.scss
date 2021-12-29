@@ -13,7 +13,11 @@
 @import 'pages/_signup';
 @import 'pages/_login';
 @import 'pages/_receita_cadastro';
+@import 'pages/_receita_completa';
 
 @import 'components/_card-receita';
 @import 'components/_botao-neon';
 @import 'components/_icone-favorito';
+
+@import 'vendors/_slick-theme';
+@import 'vendors/_slick';

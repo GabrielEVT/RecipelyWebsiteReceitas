@@ -173,7 +173,7 @@
 
                 <div class="formulario__campo">
                     <div class="container-imagens-videos border">
-                        <label class="formulario__campo-label">
+                        <label class="formulario__campo-label enviar-fotos-receita">
                             <svg id="imagem_camera_foto"
                                 xmlns="http://www.w3.org/2000/svg" 
                                 xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -192,18 +192,19 @@
                             </svg>
                             <p class="arraste">ARRASTE PARA ENVIAR FOTOS DA RECEITA<span>Adicione até 5 imagens</span></p>
                         </label>
-                        <label for="imagem_receita" class="container-imagem-receita">Adicionar imagem
+                        <label for="imagem_receita" class="container-imagem-receita enviar-fotos-receita">Adicionar imagem
                             <input type="file" name="inputFiles_imagensReceita[]" id="imagem_receita" accept="image/*"  multiple>
                         </label>
-                    </div>
-                    <div class="images_container__preview">
 
-                    </div>
+                        <div class="images_container__preview">
+
+                        </div>  
+                    </div>   
                 </div>
 
                 <div class="formulario__campo">
                     <div class="container-imagens-videos border">
-                        <label class="formulario__campo-label">
+                        <label class="formulario__campo-label enviar-video-receita">
                             <svg id="imagem_camera_video"
                                 xmlns="http://www.w3.org/2000/svg" 
                                 xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -222,12 +223,13 @@
                             </svg>
                             <p class="arraste">ARRASTE PARA ENVIAR VÍDEO DA RECEITA<span>Adicione um vídeo de até 300mb</span></p>
                         </label>
-                        <label for="video_receita" class="container-imagem-receita">Adicionar vídeo
+                        <label style="margin-bottom: 15px;" for="video_receita" class="container-imagem-receita enviar-video-receita">Adicionar vídeo
                             <input type="file" name="inputFile_videoReceita" id="video_receita" accept="video/*">
-                        </label>     
+                        </label>    
+                        <video style="object-fit:cover;" id="video-preview" style="display: block;" width="100%" max-height="400px" poster="img/preview-upload-video.jpg" controls> 
                     </div>
 
-                    <video id="video-preview" style="display: block" height="300px" width="200px" controls>
+
                 </div>
                 <button class="formulario__button" type="submit">Envie sua receita</button>
             </fieldset>
@@ -241,6 +243,11 @@
     const imagem_container = document.querySelector('.images_container__preview');
 
     input_images.addEventListener('change', () =>{
+        const enviarFotos = document.querySelectorAll('.enviar-fotos-receita');
+        enviarFotos.forEach(labelButton =>{
+            labelButton.classList.toggle("active");
+        });
+        console.log(enviarFotos);
         for(i of input_images.files){
             let reader = new FileReader();
             let figure = document.createElement("figure")
@@ -273,6 +280,11 @@
     const videoSource = document.createElement('source');
 
     input_video.addEventListener('change', function() {
+    const enviarVideo = document.querySelectorAll('.enviar-video-receita');
+    enviarVideo.forEach(labelButton =>{
+        labelButton.classList.toggle("active");
+    });
+
     let files = this.files || [];
     
     if (!files.length) return;

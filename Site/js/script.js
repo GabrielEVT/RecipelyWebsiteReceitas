@@ -89,4 +89,22 @@ $(document).ready(function(){
         autoplaySpeed: 2500,
         fade: true,
     });
+
+    $('.pagina-inicial .card-receitas .container').slick({
+        arrows: true,
+        centerMode: false,
+        slidesToShow: 2,
+        autoPlay: true,
+        autoplaySpeed: 1000,  
+        responsive: [
+            {
+            breakpoint: 888,
+            settings: {
+                arrows: true,
+                centerMode: false,
+                slidesToShow: 1
+                }
+            }
+        ]
+    });
 });

@@ -39,6 +39,73 @@
     }
 }
 
+.pagina-inicial {
+    .card-receitas {
+        margin: 0;
+    }
+    section.card-receitas:nth-child(2) {
+        margin-top: 20px;
+    }
+    .card-receitas__titulo {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        h1 {
+            margin: 0;
+            padding: 0 0 5px 0;
+            background-image: linear-gradient(to bottom, $cor_principal, #d41212);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            display: inline;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-image: linear-gradient(to right, #fff 10%, transparent);
+                left: 0;    
+                bottom: 0;
+            }
+        }
+    }
+    .slick-list {
+        padding: 10px 200px 0 10px;
+    }
+    .slick-initialized .slick-slide {
+        margin: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pagina-inicial {
+        .slick-list {
+            padding: 10px 50px 0 10px;
+        }
+        .slick-initialized .slick-slide {
+            margin: 40px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .pagina-inicial {
+        .slick-list {
+            padding: 10px 10px 0 10px;
+        }
+        .slick-initialized .slick-slide {
+            margin: 50px 40px;
+        }
+    }
+}
+
 @media (max-width: 560px) {
     .banner {
         .container {
@@ -123,4 +190,10 @@
             opacity: 1;
         }
     }
+        .card-receitas {
+            margin-top: 80px;
+            .container {
+                transform: translateX(0%) !important;     
+            }
+        }
 }

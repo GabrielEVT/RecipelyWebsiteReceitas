@@ -195,7 +195,7 @@
                         <label for="imagem_receita" class="container-imagem-receita enviar-fotos-receita">Adicionar imagem
                             <input type="file" name="inputFiles_imagensReceita[]" id="imagem_receita" accept="image/*"  multiple>
                         </label>
-
+                        <p class="errorMessage" id="errorMessage_QuantidadeImagens">O limite de 5 imagens foi excedido!</p>
                         <div class="images_container__preview">
 
                         </div>  
@@ -226,7 +226,7 @@
                         <label style="margin-bottom: 15px;" for="video_receita" class="container-imagem-receita enviar-video-receita">Adicionar vídeo
                             <input type="file" name="inputFile_videoReceita" id="video_receita" accept="video/*">
                         </label>    
-                        <!-- <video style="object-fit:cover;" id="video-preview" style="display: block;" width="100%" max-height="400px" poster="img/preview-upload-video.jpg" controls>  -->
+                        <p class="errorMessage" id="errorMessage_MegabytesVideo">O limite de 300mb foi excedido!</p>
                     </div>
                 </div>
                 <button class="formulario__button" type="submit">Envie sua receita</button>
@@ -239,15 +239,25 @@
 <script>
     const input_images = document.getElementById('imagem_receita');
     const imagem_container = document.querySelector('.images_container__preview');
+    const errorMessage_QuantidadeImagens = document.getElementById('errorMessage_QuantidadeImagens');
 
-    input_images.addEventListener('change', () =>{
+    input_images.addEventListener('change', () =>{ 
+        
+        if(input_images.files.length > 5)
+        {
+            errorMessage_QuantidadeImagens.classList.toggle("active")
+            return;
+        }
+
         const enviarFotos = document.querySelectorAll('.enviar-fotos-receita');
         enviarFotos.forEach(labelButton =>{
             labelButton.classList.toggle("active");
         });
         
+       
         for(i of input_images.files){
             let reader = new FileReader();
+            errorMessage_QuantidadeImagens.classList.remove("active")
 
             let figure = document.createElement("figure")
             let figCaption = document.createElement("figcaption")
@@ -278,8 +288,14 @@
     const input_video = document.getElementById('video_receita');
     const videoSource = document.createElement('source');
     const video_div = document.getElementById(`video_div_input`)
+    let errorMessage_MegabytesVideo = document.getElementById(`errorMessage_MegabytesVideo`)
 
     input_video.addEventListener('change', function() {
+        if(input_video.files[0].size > 314572800){
+            errorMessage_MegabytesVideo.classList.toggle("active")
+            return;
+        }
+
         const enviarVideo = document.querySelectorAll('.enviar-video-receita')
 
         enviarVideo.forEach(labelButton =>{
@@ -291,7 +307,11 @@
         if (!files.length) return;
         
         let video = document.createElement(`video`)
+        video.setAttribute("controls", "controls")
         video.classList.add(`video_uploaded_preview`)
+
+        errorMessage_MegabytesVideo.classList.remove("active")
+        
         let reader = new FileReader();
 
         reader.onload = function (e) {
@@ -313,6 +333,17 @@
         max-height: 300px;
         width: auto;
     }
+
+    .errorMessage{
+        display: none;
+        margin-top: 10px;
+        padding-left: 5px;
+        color: #e51515;
+        border-left: 2px solid #e51515;
+    }
+    .errorMessage.active{
+        display: block;
+    }
 </style>
 
 <!-- ADICIONAR NOVO INPUT RECEITA -->
@@ -324,16 +355,15 @@
         i++;
         if(i > 20) {
             btnAdicionarIngrediente.disabled = true;
-            btnAdicionarIngrediente.style.transition = "0.3s ease";
-            btnAdicionarIngrediente.style.opacity = "0.5";
-            btnAdicionarIngrediente.style.pointerEvents = "none";
-            const paragrafoMensagem = document.createElement('p');
-            paragrafoMensagem.textContent = "Quantidade de ingredientes exedida, por favor, pare!";
-            paragrafoMensagem.style.marginTop = "10px";
-            paragrafoMensagem.style.paddingLeft = "5px";
-            paragrafoMensagem.style.color = "#e51515";
-            paragrafoMensagem.style.borderLeft = "2px solid #e51515"
-            divIngrediente.appendChild(paragrafoMensagem);
+            btnAdicionarIngrediente.style.transition = "0.3s ease"
+            btnAdicionarIngrediente.style.opacity = "0.5"
+            btnAdicionarIngrediente.style.pointerEvents = "none"
+
+            let errorMessage_QuantidadeIngredientes = document.createElement('p')
+            errorMessage_QuantidadeIngredientes.textContent = "Quantidade de ingredientes exedida, por favor, pare!"
+            errorMessage_QuantidadeIngredientes.classList.add("errorMessage")
+            errorMessage_QuantidadeIngredientes.classList.add("active")
+            divIngrediente.appendChild(errorMessage_QuantidadeIngredientes);
         } else {
             adicionarIngrediente();
         }

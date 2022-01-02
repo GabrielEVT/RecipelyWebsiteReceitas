@@ -203,7 +203,7 @@
                 </div>
 
                 <div class="formulario__campo">
-                    <div class="container-imagens-videos border">
+                    <div class="container-imagens-videos border" id="video_div_input">
                         <label class="formulario__campo-label enviar-video-receita">
                             <svg id="imagem_camera_video"
                                 xmlns="http://www.w3.org/2000/svg" 
@@ -226,10 +226,8 @@
                         <label style="margin-bottom: 15px;" for="video_receita" class="container-imagem-receita enviar-video-receita">Adicionar vídeo
                             <input type="file" name="inputFile_videoReceita" id="video_receita" accept="video/*">
                         </label>    
-                        <video style="object-fit:cover;" id="video-preview" style="display: block;" width="100%" max-height="400px" poster="img/preview-upload-video.jpg" controls> 
+                        <!-- <video style="object-fit:cover;" id="video-preview" style="display: block;" width="100%" max-height="400px" poster="img/preview-upload-video.jpg" controls>  -->
                     </div>
-
-
                 </div>
                 <button class="formulario__button" type="submit">Envie sua receita</button>
             </fieldset>
@@ -247,12 +245,14 @@
         enviarFotos.forEach(labelButton =>{
             labelButton.classList.toggle("active");
         });
-        console.log(enviarFotos);
+        
         for(i of input_images.files){
             let reader = new FileReader();
+
             let figure = document.createElement("figure")
             let figCaption = document.createElement("figcaption")
-            let containerImagem = document.createElement("div");
+            let containerImagem = document.createElement("div")
+
             containerImagem.setAttribute("class", "imagem-preview-container");
             let containerConteudo = document.createElement("div");
             containerConteudo.setAttribute("class", "imagem-preview-item");
@@ -276,32 +276,44 @@
 <!-- VIDEO UPLOAD PREVIEW -->
 <script>
     const input_video = document.getElementById('video_receita');
-    const video = document.getElementById('video-preview');
     const videoSource = document.createElement('source');
+    const video_div = document.getElementById(`video_div_input`)
 
     input_video.addEventListener('change', function() {
-    const enviarVideo = document.querySelectorAll('.enviar-video-receita');
-    enviarVideo.forEach(labelButton =>{
-        labelButton.classList.toggle("active");
-    });
+        const enviarVideo = document.querySelectorAll('.enviar-video-receita')
 
-    let files = this.files || [];
-    
-    if (!files.length) return;
-    
-    let reader = new FileReader();
+        enviarVideo.forEach(labelButton =>{
+            labelButton.classList.toggle("active");
+        });
 
-    reader.onload = function (e) {
-        videoSource.setAttribute('src', e.target.result);
-        video.appendChild(videoSource);
-        video.load();
-        video.play();
-    };
-    
-    reader.readAsDataURL(files[0]);
+        let files = this.files || [];
+        
+        if (!files.length) return;
+        
+        let video = document.createElement(`video`)
+        video.classList.add(`video_uploaded_preview`)
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            video_div.insertAdjacentElement(`beforeend`, video)
+            videoSource.setAttribute('src', e.target.result);
+            video.appendChild(videoSource);
+            video.load();
+            video.play();
+        };
+        
+        reader.readAsDataURL(files[0]);
     });
 </script>
 
+<style>
+    .video_uploaded_preview{
+        display: block;
+        object-fit: cover;
+        max-height: 300px;
+        width: auto;
+    }
+</style>
 
 <!-- ADICIONAR NOVO INPUT RECEITA -->
 <script>

@@ -360,7 +360,7 @@
             btnAdicionarIngrediente.style.pointerEvents = "none"
 
             let errorMessage_QuantidadeIngredientes = document.createElement('p')
-            errorMessage_QuantidadeIngredientes.textContent = "Quantidade de ingredientes exedida, por favor, pare!"
+            errorMessage_QuantidadeIngredientes.textContent = "Quantidade de ingredientes excedida, por favor, pare!"
             errorMessage_QuantidadeIngredientes.classList.add("errorMessage")
             errorMessage_QuantidadeIngredientes.classList.add("active")
             divIngrediente.appendChild(errorMessage_QuantidadeIngredientes);

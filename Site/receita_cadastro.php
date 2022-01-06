@@ -308,6 +308,7 @@
         
         let video = document.createElement(`video`)
         video.setAttribute("controls", "controls")
+        video.setAttribute("autoplay", "autoplay")
         video.classList.add(`video_uploaded_preview`)
 
         errorMessage_MegabytesVideo.classList.remove("active")
@@ -325,26 +326,6 @@
         reader.readAsDataURL(files[0]);
     });
 </script>
-
-<style>
-    .video_uploaded_preview{
-        display: block;
-        object-fit: cover;
-        max-height: 300px;
-        width: auto;
-    }
-
-    .errorMessage{
-        display: none;
-        margin-top: 10px;
-        padding-left: 5px;
-        color: #e51515;
-        border-left: 2px solid #e51515;
-    }
-    .errorMessage.active{
-        display: block;
-    }
-</style>
 
 <!-- ADICIONAR NOVO INPUT RECEITA -->
 <script>

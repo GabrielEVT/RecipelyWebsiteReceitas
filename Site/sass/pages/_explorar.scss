@@ -81,6 +81,16 @@
         & .barra-pesquisa__explorar {
             width: 100%;
         }
+        & .botao{
+            width: 200px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+            padding: 0 10px;
+            
+            align-self: center;
+        }
     }
 }
 

@@ -40,16 +40,12 @@
         }
         &__conteudo {
             
-            // background: rgb(38,50,56);   
-            // background: radial-gradient(circle at 90% 0%, 
-            // rgba(18,20,22,1),
-            // rgba(22,27,29,1), 
-            // rgba(26,33,36,1), 
-            // rgba(38,50,56,1));
-
-            background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.1));
-            backdrop-filter: blur(30px);
-
+            background: rgb(38,50,56);   
+            background: radial-gradient(circle at 90% 0%, 
+            rgba(18,20,22,1),
+            rgba(22,27,29,1), 
+            rgba(26,33,36,1), 
+            rgba(38,50,56,1));
             padding: 20px 30px;
             border-radius: 20px;
             font-family: 'Montserrat', sans-serif, arial;
@@ -80,23 +76,6 @@
                     align-self: flex-end;
                 }
             }
-            &:before {
-                content: '';
-                position: absolute;
-                height: 200px;
-                width: 140px;
-                background: linear-gradient(to right, #fff, transparent);
-                // backdrop-filter: blur(25px);
-                filter: blur(20px);
-                opacity: 0.9;
-                top: -120px;
-                left: -50px; 
-                transform: rotate(60deg);  
-                transition: 0.5s ease;            
-            }
-            &:hover:before {
-                filter: blur(10px);
-            }
         }
         &:hover{
             transform: scale(1.016);
@@ -111,8 +90,5 @@
 @media (max-width: 560px) {
     .card-receitas {
         margin-top: 80px;
-        .container {
-            transform: translateX(6%);     
-        }
     }
 }

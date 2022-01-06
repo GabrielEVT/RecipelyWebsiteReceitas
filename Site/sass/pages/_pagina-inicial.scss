@@ -54,11 +54,7 @@
         h1 {
             margin: 0;
             padding: 0 0 5px 0;
-            background-image: linear-gradient(to bottom, $cor_principal, #d41212);
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: $cor_principal;
             font-size: 2.8rem;
             text-transform: uppercase;
             font-family: "Montserrat", sans-serif;

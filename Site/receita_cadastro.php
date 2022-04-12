@@ -180,7 +180,7 @@
                                 aria-hidden="true" 
                                 focusable="false" 
                                 width="2.0em" 
-                            height="2.0em" 
+                                height="2.0em" 
                                 style="vertical-align: -0.125em;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" 
                                 preserveAspectRatio="xMidYMid meet" 
                                 viewBox="0 0 16 16">
@@ -231,7 +231,7 @@
                 </div>
                 <button class="formulario__button" type="submit">Envie sua receita</button>
             </fieldset>
-            </form>
+        </form>
     </div>   
 </main>
 
@@ -334,7 +334,7 @@
     let i = 1;
     btnAdicionarIngrediente.addEventListener('click', () => {
         i++;
-        if(i > 20) {
+        if(i > 15) {
             btnAdicionarIngrediente.disabled = true;
             btnAdicionarIngrediente.style.transition = "0.3s ease"
             btnAdicionarIngrediente.style.opacity = "0.5"
